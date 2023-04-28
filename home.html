@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- IMPORT BOOTSTRAP -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Social Media</title>
+    <link
+      rel="website icon"
+      type="png"
+      href="images/317732_photography_photos_picasa_camera_icon.png"
+    />
+  </head>
+  <body>
+    <!-- ADD BUTTON POST -->
+    <div
+      class="bg-primary rounded-circle"
+      id="addBtn"
+      data-bs-toggle="modal"
+      data-bs-target="#addPostModal"
+    >
+      +
+    </div>
+    <!-- ADD BUTTON POST //-->
+    <!-- MODALS -->
+    <!-- CREATE POST MODAL //-->
+    <div
+      class="modal fade"
+      id="addPostModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Create A New Post
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="title" class="col-form-label">Title</label>
+                <input type="text" class="form-control" id="title" value="" />
+              </div>
+              <div class="mb-3">
+                <textarea name="" id="body"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="postImage" class="col-form-label">Image</label>
+                <input type="file" class="form-control" id="postImage" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              id="loginss"
+              class="btn btn-primary"
+              onclick="addPostBtn()"
+            >
+              Add A New Post
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CREATE POST MODAL //-->
+    <!-- LOGIN MODALS -->
+    <div
+      class="modal fade"
+      id="localModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="username" class="col-form-label">Username:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  value="mosbah"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="password" class="col-form-label">Password:</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  value="123456"
+                  id="password"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              id="loginss"
+              class="btn btn-primary"
+              onclick="loginBtn()"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- LOGIN MODALS //-->
+    <!-- LOGIN MODALS -->
+    <div
+      class="modal fade"
+      id="registerModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Register A New User
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="register-name" class="col-form-label">Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="register-name"
+                  placeholder="Name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="register-username" class="col-form-label"
+                  >Username:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="register-username"
+                  placeholder="username"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="register-password" class="col-form-label"
+                  >Password:</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="register-password"
+                  placeholder="Password"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              id="loginss"
+              class="btn btn-primary"
+              onclick="registerBtn()"
+            >
+              Register
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- LOGIN MODALS //-->
+    <!-- MODALS //-->
+    <!-- =====ALERTS===== -->
+    <div id="loginAlert" class="fade show"></div>
+    <!-- =====ALERTS===== //-->
+
+    <!-- NAV BAR -->
+    <div class="container">
+      <div class="d-flex justify-content-center">
+        <div class="col-9">
+          <nav
+            class="navbar navbar-expand-lg bg-body-tertiary shadow rounded pt-3"
+          >
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Tarmeez</a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                  </li>
+                </ul>
+                <div id="loginDiv" class="d-flex">
+                  <button
+                    id="logBtn"
+                    class="btn btn-outline-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#localModal"
+                    type="button"
+                  >
+                    Login
+                  </button>
+                  <button
+                    id="regBtn"
+                    class="btn btn-outline-success mx-3"
+                    data-bs-toggle="modal"
+                    data-bs-target="#registerModal"
+                    type="button"
+                  >
+                    Register
+                  </button>
+                </div>
+                <div id="logoutDiv" class="d-flex">
+                  <button
+                    id="logoutBtn"
+                    class="btn btn-outline-danger"
+                    type="button"
+                    onclick="logout()"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- NAV BAR //-->
+
+    <!-- MAIN CONTENT -->
+    <div class="container" style="height: 100vh">
+      <!-- POSTS -->
+      <div class="d-flex justify-content-center my-4">
+        <div class="col-9">
+          <div id="posts">
+            <!-- POST -->
+            <div class="card shadow my-5">
+              <div class="card-header">
+                <img
+                  class="rounded-circle border border-3"
+                  src="images/profile.webp"
+                  alt=""
+                  style="width: 5%"
+                />
+                <b>@Mosbah</b>
+              </div>
+              <div class="card-body">
+                <img class="w-100" src="images/jZwsaGaMIaKmGAm.jpg" alt="" />
+                <h6 class="mt-1" style="color: rgb(178, 174, 174)">
+                  2 min ago
+                </h6>
+                <h5>Hello World</h5>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
+                  debitis itaque at nemo pariatur nam quasi distinctio
+                  voluptatem, consectetur ullam, ratione non quis nobis
+                  perferendis placeat temporibus esse rem cum!
+                </p>
+                <hr />
+                <div>
+                  <img src="images/pencil.svg" alt="" />
+                  <span>(3) comments</span>
+                </div>
+              </div>
+            </div>
+            <!-- POST //-->
+          </div>
+        </div>
+      </div>
+
+      <!-- POSTS //-->
+    </div>
+    <!-- MAIN CONTENT //-->
+
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script src="js/final.js"></script>
+  </body>
+</html>
