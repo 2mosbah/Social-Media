@@ -40,3 +40,9 @@ body {
   -o-border-radius: 10px;
   resize: none;
 }
+
+.navImg {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}

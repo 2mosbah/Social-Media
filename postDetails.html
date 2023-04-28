@@ -19,16 +19,6 @@
     />
   </head>
   <body>
-    <!-- ADD BUTTON POST -->
-    <div
-      class="bg-primary rounded-circle"
-      id="addBtn"
-      data-bs-toggle="modal"
-      data-bs-target="#addPostModal"
-    >
-      +
-    </div>
-    <!-- ADD BUTTON POST //-->
     <!-- MODALS -->
     <!-- CREATE POST MODAL //-->
     <div
@@ -56,7 +46,6 @@
               <div class="mb-3">
                 <label for="title" class="col-form-label">Title</label>
                 <input type="text" class="form-control" id="title" value="" />
-                <input type="hidden" id="postId" />
               </div>
               <div class="mb-3">
                 <textarea name="" id="body"></textarea>
@@ -77,7 +66,7 @@
             </button>
             <button
               type="button"
-              id="editPost"
+              id="loginss"
               class="btn btn-primary"
               onclick="addPostBtn()"
             >
@@ -240,6 +229,7 @@
     </div>
     <!-- REGISTER MODALS //-->
     <!-- MODALS //-->
+
     <!-- =====ALERTS===== -->
     <div id="loginAlert" class="fade show"></div>
     <!-- =====ALERTS===== //-->
@@ -252,7 +242,7 @@
             class="navbar navbar-expand-lg bg-body-tertiary shadow rounded pt-3"
           >
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Social Media</a>
+              <a class="navbar-brand" href="home.html">Social Media</a>
               <button
                 class="navbar-toggler"
                 type="button"
@@ -323,54 +313,84 @@
       </div>
     </div>
     <!-- NAV BAR //-->
-
     <!-- MAIN CONTENT -->
-    <div class="container" style="height: 100vh">
-      <!-- POSTS -->
-      <div class="d-flex justify-content-center my-4">
+    <!-- USER'S POST -->
+    <div class="container">
+      <div class="row d-flex justify-content-center mt-5">
         <div class="col-9">
-          <div id="posts">
-            <!-- POST -->
-            <div class="card shadow my-5">
-              <div class="card-header">
-                <img
-                  class="rounded-circle border border-3"
-                  src="images/profile.webp"
-                  alt=""
-                  style="width: 5%"
-                />
-                <b>@Mosbah</b>
-              </div>
-              <div class="card-body" onclick="postClicked()">
-                <img class="w-100" src="images/jZwsaGaMIaKmGAm.jpg" alt="" />
-                <h6 class="mt-1" style="color: rgb(178, 174, 174)">
-                  2 min ago
-                </h6>
-                <h5>Hello World</h5>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
-                  debitis itaque at nemo pariatur nam quasi distinctio
-                  voluptatem, consectetur ullam, ratione non quis nobis
-                  perferendis placeat temporibus esse rem cum!
-                </p>
-                <hr />
-                <div>
-                  <img src="images/pencil.svg" alt="" />
-                  <span>(3) comments</span>
-                </div>
-              </div>
-            </div>
-            <!-- POST //-->
-          </div>
+          <h1>
+            <span id="usernameSpan">Mosbah</span>
+            Post
+          </h1>
         </div>
       </div>
+    </div>
+    <!-- POST ROW -->
+    <div class="container">
+      <div class="row d-flex justify-content-center mt-5">
+        <div class="col-9" id="post">
+          <div class="card shadow my-5">
+            <div class="card-header">
+              <img
+                class="rounded-circle border border-3"
+                src="images/profile.webp"
+                alt=""
+                style="width: 5%"
+              />
+              <b>@Mosbah</b>
+            </div>
+            <div class="card-body">
+              <img class="w-100" src="images/jZwsaGaMIaKmGAm.jpg" alt="" />
+              <h6 class="mt-1" style="color: rgb(178, 174, 174)">2 min ago</h6>
+              <h5>Hello World</h5>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
+                debitis itaque at nemo pariatur nam quasi distinctio voluptatem,
+                consectetur ullam, ratione non quis nobis perferendis placeat
+                temporibus esse rem cum!
+              </p>
+              <hr />
+              <div>
+                <img src="images/pencil.svg" alt="" />
+                <span>(3) comments</span>
+              </div>
+            </div>
+            <!-- COMMENTS -->
+            <div id="comments">
+              <!-- COMMENT -->
+              <div class="p-3" style="background-color: rgb(235, 235, 235)">
+                <!-- PROFILE PIC + USERNAME -->
+                <img
+                  src="images/fire.jpg"
+                  class="rounded-circle"
+                  alt=""
+                  style="width: 40px; height: 40px"
+                />
+                <b id="commentsUsername">@mosbah</b>
+                <!-- PROFILE PIC + USERNAME //-->
 
-      <!-- POSTS //-->
+                <!-- COMMENTS BODY -->
+                <div>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Inventore ea numquam commodi doloremque iure maxime,
+                  necessitatibus, dolor, explicabo iste dolorem reprehenderit
+                  totam ducimus ullam rerum veniam. Veniam ad nihil dolorem!
+                </div>
+                <!-- COMMENTS BODY //-->
+              </div>
+              <!-- COMMENT //-->
+            </div>
+            <!-- COMMENTS //-->
+          </div>
+          <!-- POST ROW //-->
+        </div>
+      </div>
     </div>
     <!-- MAIN CONTENT //-->
-
+    <!-- USER'S POST //-->
     <script src="node_modules/axios/dist/axios.min.js"></script>
     <script src="js/mainLogic.js"></script>
     <script src="js/final.js"></script>
+    <script src="js/postDetails.js"></script>
   </body>
 </html>
